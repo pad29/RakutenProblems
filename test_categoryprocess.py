@@ -22,7 +22,7 @@ def PrintCategoriesTable(database_name='wikipedia_database_fat.db'):
     cursor = connection.cursor()
 
     cursor.execute('SELECT * FROM WikipediaCategories ORDER BY article_id DESC LIMIT 10')
-    print("CATEGORIES:\n")
+    print("CATEGORIES:")
     for row in cursor: 
         print(row)
     
@@ -34,13 +34,17 @@ def PrintCategoriesTable(database_name='wikipedia_database_fat.db'):
 def test1():
     """Check that there are articles in the WikipediaCategories table
     """
-    assert CountArticlesInCategoriesTable() == 1, "Should be greater than 0"
+    assert CountArticlesInCategoriesTable() > 0, "Should be greater than 0. Latest was 1039"
 
-
+def test2():
+    """Check that there are articles in the WikipediaCategories table
+    """
+    assert CountArticlesInCategoriesTable('wikipedia_database_jp.db') == 1, "Should be greater than 0. Latest was 7211"
 
 
 def main():
     PrintCategoriesTable()
+    PrintCategoriesTable('wikipedia_database_jp.db')
 
 
 if __name__ == "__main__":

@@ -1,10 +1,10 @@
 
 import sqlite3
 
-categories_source = "wikipedia_dump/fatwiki-20231101-categorylinks.sql"
-database_name = "wikipedia_database_fat.db"
-#categories_source = "wikipedia_dump/jawiki-20231101-categorylinks.sql"
-#database_name = "wikipedia_database_jp.db"
+#categories_source = "wikipedia_dump/fatwiki-20231101-categorylinks.sql"
+#database_name = "wikipedia_database_fat.db"
+categories_source = "wikipedia_dump/jawiki-20231101-categorylinks.sql"
+database_name = "wikipedia_database_jp.db"
 
 
 def read_category_file(file_path):
@@ -38,9 +38,9 @@ def main():
     connection = sqlite3.connect(database_name)
     cursor = connection.cursor()
     
-    cursor.execute('''
-        DROP TABLE WikipediaCategories;
-    ''')
+    #cursor.execute('''
+    #    DROP TABLE WikipediaCategories;
+    #''')
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS WikipediaCategories (
