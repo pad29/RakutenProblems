@@ -51,9 +51,7 @@ def process_page(page_id, page_ns, page_title, page_redirect, page_content, curs
     if page_redirect is None:
         #page_parsed = wikitextparser.parse(page_content)
         cursor.execute('INSERT INTO WikipediaTitles VALUES (?, ?)', (page_id, page_title))
-        #print("Parsed page {}-{}".format(page_id, page_title))
-    #else:
-        #print("Redirect from {} to {}".format(page_title, page_redirect))
+
 
 
 class XMLSAXParser(xml.sax.ContentHandler):
@@ -99,7 +97,6 @@ class XMLSAXParser(xml.sax.ContentHandler):
 
         if tag_name == "page":
             self.in_page = False
-            # We have the whole page so do with it what you will
             process_page(self.page_id, self.page_ns, self.page_title, self.page_redirect, self.page_content, self.cursor)
         else:
             if self.in_page:
