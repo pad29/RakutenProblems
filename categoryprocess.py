@@ -1,4 +1,3 @@
-
 import sqlite3
 
 #categories_source = "wikipedia_dump/fatwiki-20231101-categorylinks.sql"

@@ -28,8 +28,6 @@ def PrintCategoriesTable(database_name='wikipedia_database_fat.db'):
     
     connection.close()
 
-    return 1
-
 
 def test1():
     """Check that there are articles in the WikipediaCategories table
