@@ -34,12 +34,12 @@ def PrintCategoriesTable(database_name='wikipedia_database_fat.db'):
 def test1():
     """Check that there are articles in the WikipediaCategories table
     """
-    assert CountArticlesInCategoriesTable() > 0, "Should be greater than 0. Latest was 1039"
+    assert CountArticlesInCategoriesTable() > 0, "Should be greater than 0. Latest was 13380222"
 
 def test2():
     """Check that there are articles in the WikipediaCategories table
     """
-    assert CountArticlesInCategoriesTable('wikipedia_database_jp.db') == 1, "Should be greater than 0. Latest was 7211"
+    assert CountArticlesInCategoriesTable('wikipedia_database_jp.db') > 0, "Should be greater than 0. Latest was 13380222"
 
 
 def main():
