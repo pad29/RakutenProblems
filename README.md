@@ -5,4 +5,4 @@
 * wikiindex.py : a helper module used by wikiprocess.py
 * categoryprocess.py : loads wikipedia categories
 * create_embedding_index.py : creates an embedding index for wikipedia titles
-* test_*.py : tests for the various files above, which also show how to query the dbs and embedding index
+* test_*.py : tests for the various files above, which also show how to query the dbs and embedding index. Test require pytest to be installed. Some test files can be run directly to print out raw data for examination.
