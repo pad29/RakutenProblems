@@ -8,6 +8,8 @@ exp_day5_filename = "ab_test_dataset/2023-10-19.parquet"
 exp_all_filename = "ab_test_dataset/exp_all.pkl"
 
 def read_data():
+    """Load from parquet files into dataframe and compute a few additional columns, then store it on disk for further analysis
+    """
     day1 = pd.read_parquet(exp_day1_filename, engine='pyarrow')
     day1_day = pd.to_datetime('2023-10-15', format='%Y-%m-%d')
     day1['day'] = pd.Series([day1_day for x in range(len(day1))])
