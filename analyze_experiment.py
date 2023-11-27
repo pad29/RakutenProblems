@@ -50,7 +50,18 @@ def read_data():
     day5['visit_time'] = pd.Series([(day5.iloc[x, 5] - day5.iloc[x, 4])*3600 for x in range(len(day5))])
     print(f"{day5_day}:\n{day5.describe()}")
 
-    exp_all = pd.concat([day1, day2, day3, day4, day5])
+    exp_all = pd.concat(
+        [day1[day1['variant']=='test'],
+         day1[day1['variant']=='control'],
+         day2[day2['variant']=='test'],
+         day2[day2['variant']=='control'],
+         day3[day3['variant']=='test'],
+         day3[day3['variant']=='control'], 
+         day4[day4['variant']=='test'],
+         day4[day4['variant']=='control'], 
+         day5[day5['variant']=='test'],
+         day5[day5['variant']=='control'], 
+        ])
 
     exp_all.to_pickle(exp_all_filename)
 
